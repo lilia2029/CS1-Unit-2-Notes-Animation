@@ -5,7 +5,7 @@
     height:200px;
     /*Sub-properties to attach an animation*/
     animation-name:colorchange-alt;
-    animation-duration:.90s;
+    animation-duration:9s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -18,6 +18,28 @@
     0%{background:rgb(175, 192, 247);}
     50%{background:rgb(174, 226, 176);}
     100%{background:rgb(175, 192, 247);}
+}
+/*STEP 1. Attach animation using a shortcut property combining name, duration, iterations, and timing function*/
+#animated-emoji{
+    animation:move-emoji 5s infinite ease-in-out;
+    display:inline-block;
+    font-size: 40px;
+    position: absolute;
+    top: 120px;
+    left: 70px;
+}
+/*STEP 2. Define animation sequence*/
+@keyframes move-emoji{
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(180deg) scale(1.5);
+        opacity:0.2;
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
 .box{
     background: rgb(174, 226, 176);
